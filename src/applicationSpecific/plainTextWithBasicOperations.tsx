@@ -34,7 +34,7 @@ type BasicTextOperation = InsertTextOperation | DeleteTextOperation;
 
 type AggregatedBasicTextOperation = BasicTextOperation[];
 
-const makeInsertOperation = (position: number, content: string): InsertTextOperation => ({
+export const makeInsertOperation = (position: number, content: string): InsertTextOperation => ({
   type: BasicTextOperationType.Insert,
   position,
   content,

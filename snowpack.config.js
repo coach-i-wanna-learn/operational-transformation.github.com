@@ -21,6 +21,8 @@ module.exports = {
     target: "es2018",
   },
   packageOptions: {},
-  devOptions: {},
+  devOptions: {
+    port: 8082
+  },
   buildOptions: {},
 };
