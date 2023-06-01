@@ -8,6 +8,7 @@ import {
   plainTextWithBasicOperationsComponents,
   plainTextWithBasicOperationsFunctions,
 } from "./applicationSpecific/plainTextWithBasicOperations";
+import { plainTextWithScanningOperationsComponents, plainTextWithScanningOperationsFunctions } from "./applicationSpecific/plainTextWithScanningOperations";
 
 const useStyles = createUseStyles({
   wrapper: {

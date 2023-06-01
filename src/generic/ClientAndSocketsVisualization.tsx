@@ -119,7 +119,7 @@ const makeSocketVisualization = <OpT extends unknown>(
 ): FunctionComponent<SocketProps<OpT>> => {
   const OperationInSocket = makeOperationInSocket(OperationVisualization);
 
-  return ({ queue, onReceiveClick, direction, tooltip }) => {
+  const SocketVisualization = ({ queue, onReceiveClick, direction, tooltip }: SocketProps<OpT>) => {
     const socketClasses = useSocketStyles();
 
     const queueEmpty = queue.length === 0;
@@ -180,6 +180,8 @@ const makeSocketVisualization = <OpT extends unknown>(
       </div>
     );
   };
+
+  return SocketVisualization
 };
 
 const useClientStyles = createUseStyles({
@@ -227,14 +229,14 @@ export const makeClientAndSocketsVisualization = <SnapshotT extends unknown, OpT
   const ClientLogVisualization = makeClientLogVisualization(applicationSpecific);
   const { EditorComponent } = applicationSpecific;
 
-  return ({
+  const ClientAndSocketsVisualization = ({
     onClientOperation,
     onClientReceiveClick,
     onServerReceiveClick,
     state,
     clientName,
     className,
-  }) => {
+  }: ClientAndSocketsVisualizationProps<SnapshotT, OpT>) => {
     const clientClasses = useClientStyles();
     const sharedClasses = useSharedStyles();
 
@@ -281,4 +283,6 @@ export const makeClientAndSocketsVisualization = <SnapshotT extends unknown, OpT
       </div>
     );
   };
+
+  return ClientAndSocketsVisualization
 };

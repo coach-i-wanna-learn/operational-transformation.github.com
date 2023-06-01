@@ -76,7 +76,7 @@ export const makeVisualization = <SnapshotT, OpT>(
   const aliceLens = makeAliceLens<SnapshotT, OpT>();
   const bobLens = makeBobLens<SnapshotT, OpT>();
 
-  return ({ initialSnapshot }) => {
+  const Visualization = ({ initialSnapshot }: { initialSnapshot: SnapshotT }) => {
     const classes = useStyles();
 
     const [visualizationState, setVisualizationState] = useState<
@@ -143,4 +143,6 @@ export const makeVisualization = <SnapshotT, OpT>(
       </div>
     );
   };
+
+  return Visualization
 };

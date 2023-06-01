@@ -37,7 +37,7 @@ export const makeServerVisualization = <SnapshotT extends unknown, OpT extends u
 ): FunctionComponent<ServerVisualizationProps<SnapshotT, OpT>> => {
   const OperationVisualization = makeOperationVisualization<OpT>(applicationSpecificComponents);
 
-  return ({ state }) => {
+  const ServerVisualization = ({ state }: ServerVisualizationProps<SnapshotT, OpT>) => {
     const sharedClasses = useSharedStyles();
     const classes = useServerStyles();
 
@@ -71,4 +71,6 @@ export const makeServerVisualization = <SnapshotT extends unknown, OpT extends u
       </div>
     );
   };
+
+  return ServerVisualization
 };

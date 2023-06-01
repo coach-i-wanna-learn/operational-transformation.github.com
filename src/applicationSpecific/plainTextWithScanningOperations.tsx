@@ -9,6 +9,8 @@ import {
   renderSnapshot,
   replaceInvisibleCharacters,
 } from "./plainTextShared";
+//@ts-ignore
+import React from 'react'
 
 const renderOp = (op: string | number, key: string | number) => {
   if (typeof op === "string") {
