@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CodeMirrorAdapter operationFromCodeMirrorChanges 1`] = `
+[
+  "insert '1', retain 14",
+  "delete 1, retain 14",
+]
+`;
+
+exports[`CodeMirrorAdapter operationFromCodeMirrorChanges 2`] = `
+[
+  "insert '11', retain 13",
+  "delete 2, retain 13",
+]
+`;
+
+exports[`CodeMirrorAdapter operationFromCodeMirrorChanges 3`] = `
+[
+  "retain 1, insert '1', retain 10",
+  "retain 1, delete 1, retain 10",
+]
+`;
+
+exports[`CodeMirrorAdapter operationFromCodeMirrorChanges 4`] = `
+[
+  "retain 23, insert '1'",
+  "retain 23, delete 1",
+]
+`;
