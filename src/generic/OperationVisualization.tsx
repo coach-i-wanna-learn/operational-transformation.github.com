@@ -114,11 +114,10 @@ enum SelfOpenStatus {
 
 export type OperationVisualizationComp<OpT> = FunctionComponent<OperationProps<OpT>>;
 
-export const makeOperationVisualization =
-  <OpT extends unknown>(
-    applicationSpecific: ApplicationSpecificOperationComponents<OpT>,
-  ): OperationVisualizationComp<OpT> =>
-  (props) => {
+export const makeOperationVisualization = <OpT extends unknown>(
+  applicationSpecific: ApplicationSpecificOperationComponents<OpT>,
+): OperationVisualizationComp<OpT> => {
+  const OperationVisualization: OperationVisualizationComp<OpT> = (props) => {
     const classes = useOperationStyles();
     const { className, style, operation, tooltipPlacement, ...otherProps } = props;
 
@@ -136,6 +135,9 @@ export const makeOperationVisualization =
       } else if (selfOpenStatus === SelfOpenStatus.Closing && hoveredOperation === undefined) {
         setSelfOpenStatus(SelfOpenStatus.Closed);
       }
+      // setHoveredOperation(operation);
+      // setTooltipContent(renderRelatedOperation(operation, hoveredOperation));
+      // setSelfOpenStatus(SelfOpenStatus.Open);
     }, [selfOpenStatus, hoveredOperation, operation]);
 
     const onOpen = useCallback(() => {
@@ -175,3 +177,5 @@ export const makeOperationVisualization =
       </Tooltip>
     );
   };
+  return OperationVisualization;
+};

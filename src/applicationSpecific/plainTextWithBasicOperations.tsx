@@ -13,7 +13,7 @@ import type { Editor } from "codemirror";
 // @ts-ignore
 import React from "react";
 
-enum BasicTextOperationType {
+export enum BasicTextOperationType {
   Insert = "INSERT",
   Delete = "DELETE",
 }
@@ -30,7 +30,7 @@ interface DeleteTextOperation {
   length: number;
 }
 
-type BasicTextOperation = InsertTextOperation | DeleteTextOperation;
+export type BasicTextOperation = InsertTextOperation | DeleteTextOperation;
 
 type AggregatedBasicTextOperation = BasicTextOperation[];
 
@@ -219,9 +219,9 @@ function transformSingleAgainstList(
   return [aPrimesPrimes, [...headBPrimes, ...tailBPrimes]];
 }
 
-function transformListAgainstList(
-  as: BasicTextOperation[],
-  bs: BasicTextOperation[],
+export function transformListAgainstList(
+  as: BasicTextOperation[], // server
+  bs: BasicTextOperation[], // client
 ): [BasicTextOperation[], BasicTextOperation[]] {
   let currBs = bs;
   const asPrime = as.flatMap((a) => {

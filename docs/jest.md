@@ -82,3 +82,20 @@ module.exports = {
 这样，您就可以快速搭建一个React Jest TypeScript测试环境，并开始编写和运行测试了。请注意，这只是一个简单的示例，您可以根据您的需求和项目进行更改和扩展。
 
 
+## 处理 css
+
+pnpm i -D identity-obj-proxy
+
+https://jestjs.io/docs/webpack#mocking-css-modules
+
+```js
+module.exports = {
+  moduleNameMapper: {
+    "^@/(.*)$": "<rootDir>/src/$1",
+    "\\.(css)$": "identity-obj-proxy",
+  },
+  preset: "ts-jest",
+  testEnvironment: "jsdom",
+};
+
+```

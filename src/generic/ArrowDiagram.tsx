@@ -91,12 +91,12 @@ export const makeArrowDiagram =
               key={i}
               start={interpolate(0.1, start, end)}
               end={interpolate(0.95, start, end)}
-              // color={getClientColor(operation.meta.author)}
+              color={getClientColor(operation.meta.author)}
               {...operationArrowStyle}
             />
           ))}
         </svg>
-        {/* {arrows.map(({ operation, start, end, tooltipPlacement }, i) => {
+        {arrows.map(({ operation, start, end, tooltipPlacement }, i) => {
           const centerPoint = interpolate(0.45, start, end);
           const style: CSSProperties = {
             position: "absolute",
@@ -111,7 +111,7 @@ export const makeArrowDiagram =
               style={style}
             />
           );
-        })} */}
+        })}
       </div>
     );
   };
